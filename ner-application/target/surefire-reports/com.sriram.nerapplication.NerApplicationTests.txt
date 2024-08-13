@@ -1,0 +1,125 @@
+-------------------------------------------------------------------------------
+Test set: com.sriram.nerapplication.NerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.09 s <<< FAILURE! -- in com.sriram.nerapplication.NerApplicationTests
+com.sriram.nerapplication.NerApplicationTests.contextLoads -- Time elapsed: 0.044 s <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@17092fff testClass = com.sriram.nerapplication.NerApplicationTests, locations = [], classes = [com.sriram.nerapplication.NerApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1c742ed4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@69c81773, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@210ab13f, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@71687585, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@1f9f6368, org.springframework.boot.test.context.SpringBootTestAnnotation@e1d423cc], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'stanfordCoreNLP' defined in class path resource [com/sriram/nerapplication/core/Pipeline.class]: Failed to instantiate [edu.stanford.nlp.pipeline.StanfordCoreNLP]: Factory method 'getInstance' threw exception with message: Error creating edu.stanford.nlp.time.TimeExpressionExtractorImpl
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 17 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [edu.stanford.nlp.pipeline.StanfordCoreNLP]: Factory method 'getInstance' threw exception with message: Error creating edu.stanford.nlp.time.TimeExpressionExtractorImpl
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 41 more
+Caused by: edu.stanford.nlp.util.ReflectionLoading$ReflectionLoadingException: Error creating edu.stanford.nlp.time.TimeExpressionExtractorImpl
+	at edu.stanford.nlp.util.ReflectionLoading.loadByReflection(ReflectionLoading.java:38)
+	at edu.stanford.nlp.time.TimeExpressionExtractorFactory.create(TimeExpressionExtractorFactory.java:60)
+	at edu.stanford.nlp.time.TimeExpressionExtractorFactory.createExtractor(TimeExpressionExtractorFactory.java:43)
+	at edu.stanford.nlp.ie.regexp.NumberSequenceClassifier.<init>(NumberSequenceClassifier.java:86)
+	at edu.stanford.nlp.ie.NERClassifierCombiner.<init>(NERClassifierCombiner.java:116)
+	at edu.stanford.nlp.pipeline.NERCombinerAnnotator.<init>(NERCombinerAnnotator.java:125)
+	at edu.stanford.nlp.pipeline.AnnotatorImplementations.ner(AnnotatorImplementations.java:68)
+	at edu.stanford.nlp.pipeline.StanfordCoreNLP.lambda$getNamedAnnotators$5(StanfordCoreNLP.java:523)
+	at edu.stanford.nlp.pipeline.StanfordCoreNLP.lambda$null$30(StanfordCoreNLP.java:602)
+	at edu.stanford.nlp.util.Lazy$3.compute(Lazy.java:126)
+	at edu.stanford.nlp.util.Lazy.get(Lazy.java:31)
+	at edu.stanford.nlp.pipeline.AnnotatorPool.get(AnnotatorPool.java:149)
+	at edu.stanford.nlp.pipeline.StanfordCoreNLP.<init>(StanfordCoreNLP.java:251)
+	at edu.stanford.nlp.pipeline.StanfordCoreNLP.<init>(StanfordCoreNLP.java:192)
+	at edu.stanford.nlp.pipeline.StanfordCoreNLP.<init>(StanfordCoreNLP.java:188)
+	at com.sriram.nerapplication.core.Pipeline.getInstance(Pipeline.java:29)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 42 more
+Caused by: edu.stanford.nlp.util.MetaClass$ClassCreationException: MetaClass couldn't create public edu.stanford.nlp.time.TimeExpressionExtractorImpl(java.lang.String,java.util.Properties) with args [sutime, {}]
+	at edu.stanford.nlp.util.MetaClass$ClassFactory.createInstance(MetaClass.java:237)
+	at edu.stanford.nlp.util.MetaClass.createInstance(MetaClass.java:382)
+	at edu.stanford.nlp.util.ReflectionLoading.loadByReflection(ReflectionLoading.java:36)
+	... 59 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at edu.stanford.nlp.util.MetaClass$ClassFactory.createInstance(MetaClass.java:233)
+	... 61 more
+Caused by: java.lang.RuntimeException: Error initializing binder 1
+	at edu.stanford.nlp.time.Options.<init>(Options.java:121)
+	at edu.stanford.nlp.time.TimeExpressionExtractorImpl.init(TimeExpressionExtractorImpl.java:44)
+	at edu.stanford.nlp.time.TimeExpressionExtractorImpl.<init>(TimeExpressionExtractorImpl.java:39)
+	... 64 more
+Caused by: java.lang.IllegalStateException: Cannot instantiate configuration.
+	at de.jollyday.datasource.impl.XmlFileDataSource.getConfiguration(XmlFileDataSource.java:39)
+	at de.jollyday.impl.DefaultHolidayManager.doInit(DefaultHolidayManager.java:239)
+	at de.jollyday.HolidayManager.init(HolidayManager.java:319)
+	at de.jollyday.caching.HolidayManagerValueHandler.createValue(HolidayManagerValueHandler.java:44)
+	at de.jollyday.caching.HolidayManagerValueHandler.createValue(HolidayManagerValueHandler.java:13)
+	at de.jollyday.util.Cache.get(Cache.java:51)
+	at de.jollyday.HolidayManager.createManager(HolidayManager.java:168)
+	at de.jollyday.HolidayManager.getInstance(HolidayManager.java:148)
+	at edu.stanford.nlp.time.JollyDayHolidays.init(JollyDayHolidays.java:57)
+	at edu.stanford.nlp.time.Options.<init>(Options.java:119)
+	... 66 more
+Caused by: java.lang.IllegalStateException: Cannot parse holidays XML file.
+	at de.jollyday.util.XMLUtil.unmarshallConfiguration(XMLUtil.java:78)
+	at de.jollyday.datasource.impl.XmlFileDataSource.getConfiguration(XmlFileDataSource.java:37)
+	... 75 more
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+ - with linked exception:
+[java.lang.ClassNotFoundException: com.sun.xml.bind.v2.ContextFactory]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:168)
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:355)
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:508)
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:465)
+	at de.jollyday.util.XMLUtil$JAXBContextCreator.create(XMLUtil.java:170)
+	at de.jollyday.util.XMLUtil.unmarshallConfiguration(XMLUtil.java:71)
+	... 76 more
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122)
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155)
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:165)
+	... 81 more
+
