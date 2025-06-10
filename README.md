@@ -13,6 +13,7 @@ City: Pretoria, Austin
 Country: South Africa
 
 ✅ API Output and Performance
+
 ![image](https://github.com/user-attachments/assets/c4e49d9b-eea5-4020-9857-4dc21718c110)
 
 🧪 Test Case 2: Barack Obama Text
